@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    Filact
+ * @package     Filact_Accountshield
+ * @copyright   Copyright (c) 2014 Filact (http://www.filact.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+
+<config>
+	<menu>
+		 <accountshield translate="title" module="accountshield">
+			<depends><module>Filact_Accountshield</module></depends>
+			<title>Account Lockout</title>
+			<action>adminhtml/lockout</action>
+			<sort_order>50</sort_order>
+		 </accountshield>
+    </menu>
+
+	<acl>
+		<resources>
+			<all>
+				<title>Allow Everything</title>
+			</all>
+			<admin>
+				<children>
+					<accountshield translate="title" module="accountshield">
+                        <title>Account Shield</title>
+                        <sort_order>65</sort_order>
+                        <children>
+                            <manage translate="title">
+                                <title>Manage</title>
+                                <sort_order>0</sort_order>
+								<children>
+									<unlock translate="title">
+										<title>Unlock</title>
+										<sort_order>0</sort_order>
+									</unlock>
+									<delete translate="title">
+										<title>Delete</title>
+										<sort_order>0</sort_order>
+									</delete>
+								</children>
+                            </manage>
+                        </children>
+                    </accountshield>
+					<system>
+						<children>
+							<config>
+								<children>
+									<accountshield module="accountshield" translate="title">
+										<title>Account Shield</title>
+										<sort_order>99</sort_order>									
+									</accountshield>								
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

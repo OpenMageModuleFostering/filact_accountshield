@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Magento
+ */
+-->
+<layout>
+    <adminhtml_lockout_index>
+        <reference name="content">
+            <block type="accountshield/adminhtml_lockout" name="lockouts" />
+        </reference>
+    </adminhtml_lockout_index>
+
+    <adminhtml_lockout_grid>
+        <block type="accountshield/adminhtml_lockout_grid" name="root"/>
+    </adminhtml_lockout_grid>
+</layout>

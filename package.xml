@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Filact_Accountshield</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Implements Account Lockout to enhance the User authentication security</summary>
+    <description>Implements Account Lockout to enhance the User authentication security.</description>
+    <notes>First release</notes>
+    <authors><author><name>Karuppusamy Ganesan</name><user>filact</user><email>admin@filact.com</email></author></authors>
+    <date>2014-08-08</date>
+    <time>06:47:46</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Filact_Accountshield.xml" hash="aceae1e75936de6bab448d100894cb83"/></dir></target><target name="magecommunity"><dir name="Filact"><dir name="Accountshield"><dir name="Block"><dir name="Adminhtml"><dir name="Lockout"><dir name="Grid"><dir name="Renderer"><file name="Islocked.php" hash="166630252663dc12f12bc117a528a72b"/></dir></dir><file name="Grid.php" hash="8a2992b6202046d9d3e02ef4459b8a09"/></dir><file name="Lockout.php" hash="7da457a7866abf553ac72d9d1764f0a2"/></dir></dir><dir name="Helper"><file name="Admin.php" hash="a25fcc48072a0b9e17ee6082566c3d0d"/><file name="Data.php" hash="53085f34e9bfc20b4b32390fd1a221e7"/></dir><dir name="Model"><file name="Lockout.php" hash="240ca9aa30bd967380deaf3f21a045c5"/><file name="Observer.php" hash="b182a2dfe0ccd66fb6f24278f2b48d9c"/><dir name="Resource"><dir name="Lockout"><file name="Collection.php" hash="bf90df2e00c2b4e0b46b2fb19c1b6449"/></dir><file name="Lockout.php" hash="587cc6aed8cf861d415ea6d9d036a231"/><file name="Setup.php" hash="e1fcd3b8d8df1b947fd7d61e98ed9cf6"/></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="LockoutController.php" hash="79e4b0bbfaa7246d9a410bed553a2c0c"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="004cca1a143ba7eb9ea9b0f5a4629540"/><file name="config.xml" hash="b0e6009d3483b02f8b2091cb8cbf9824"/><file name="system.xml" hash="4cd61e70b83d77a07bd941da45dc9284"/></dir><dir name="sql"><dir name="accountshield_setup"><file name="install-1.0.0.php" hash="d047794d3fac61fd3f92f0a99bd8f289"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="Filact_Accountshield.xml" hash="bd958711afa231f95ef8eb54daa6b0df"/></dir></dir></dir></dir></target><target name="magelocale"><dir><dir name="en_US"><file name="Filact_Accountshield.csv" hash="e44cf77fa99b468856a4ce623160ab63"/></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php><package><name>Mage_Core_Modules</name><channel>community</channel><min>1.6.0.0</min><max>1.9.0.1</max></package></required></dependencies>
+</package>

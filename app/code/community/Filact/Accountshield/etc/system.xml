@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    Filact
+ * @package     Filact_Accountshield
+ * @copyright   Copyright (c) 2014 Filact (http://www.filact.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+
+<config>
+    <sections>
+        <accountshield translate="label" module="accountshield">
+            <class>separator-top</class>
+            <label>Account Shield</label>
+            <tab>advanced</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <account translate="label">
+                    <label>Account Lockout</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>		
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+						<max_limit translate="label">
+                            <label>Threshold</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>							
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number of consecutive failed signin attempts. (Default is 3)</comment>
+                        </max_limit>
+                        <interval translate="label">
+                            <label>Duration</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>							
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>How long an account will remain as locked out. Specity in Seconds (Default is 900 Seconds)</comment>
+                        </interval>
+                    </fields>				
+                </account>
+            </groups>
+        </accountshield>
+    </sections>
+</config>

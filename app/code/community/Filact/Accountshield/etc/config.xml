@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    Filact
+ * @package     Filact_Accountshield
+ * @copyright   Copyright (c) 2014 Filact (http://www.filact.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+
+<config>
+    <modules>
+        <Filact_Accountshield>
+            <version>1.0.0</version>
+        </Filact_Accountshield>
+    </modules>
+	<global>
+		<helpers>
+		   <accountshield>
+				  <class>Filact_Accountshield_Helper</class>
+			</accountshield>
+		</helpers>
+		<blocks>
+            <accountshield>
+                <class>Filact_Accountshield_Block</class>
+            </accountshield>
+        </blocks>
+		<models>
+            <accountshield>
+                <class>Filact_Accountshield_Model</class>
+                <resourceModel>accountshield_resource</resourceModel>
+            </accountshield>
+			<accountshield_resource>
+                <class>Filact_Accountshield_Model_Resource</class>
+                <deprecatedNode>accountshield_mysql4</deprecatedNode>
+                <entities>
+                    <lockout>
+                        <table>accountshield_lockout</table>
+                    </lockout>
+				</entities>
+			</accountshield_resource>
+		</models>
+		<resources>
+            <accountshield_setup>
+                <setup>
+                    <module>Filact_Accountshield</module>
+                    <class>Filact_Accountshield_Model_Resource_Setup</class>
+                </setup>
+            </accountshield_setup>
+        </resources>
+		<events>
+			<controller_action_predispatch_customer_account_loginPost>
+				<observers>
+					<filact_accountshield_model_observer>
+						<type>singleton</type>
+						<class>Filact_Accountshield_Model_Observer</class>
+						<method>accountLock</method>
+					</filact_accountshield_model_observer>
+				</observers>
+			</controller_action_predispatch_customer_account_loginPost>
+			<customer_login>
+				<observers>
+					<filact_accountshield_model_observer_releaselog>
+						<type>singleton</type>
+						<class>Filact_Accountshield_Model_Observer</class>
+						<method>accountLockRelease</method>
+					</filact_accountshield_model_observer_releaselog>
+				</observers>
+			</customer_login>
+			<admin_user_authenticate_after>
+				<observers>
+					<filact_accountshield_model_observer>
+						<type>singleton</type>
+						<class>Filact_Accountshield_Model_Observer</class>
+						<method>adminAccountLock</method>
+					</filact_accountshield_model_observer>
+				</observers>
+			</admin_user_authenticate_after>
+			<admin_session_user_login_success>
+				<observers>
+					<filact_accountshield_model_observer>
+						<type>singleton</type>
+						<class>Filact_Accountshield_Model_Observer</class>
+						<method>adminAccountLockRelease</method>
+					</filact_accountshield_model_observer>
+				</observers>
+			</admin_session_user_login_success>
+		</events>
+	</global>
+	<admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Filact_Accountshield before="Mage_Adminhtml">Filact_Accountshield_Adminhtml</Filact_Accountshield>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+	<adminhtml>
+        <layout>
+            <updates>
+                <filact_accountshield>
+                    <file>filact_accountshield.xml</file>
+                </filact_accountshield>
+            </updates>
+        </layout>
+		<translate>
+            <modules>
+                <filact_accountshield>
+                    <files>
+                        <default>filact_accountshield.csv</default>
+                    </files>
+                </filact_accountshield>
+            </modules>
+        </translate>
+    </adminhtml>
+	<frontend>
+		<translate>
+            <modules>
+                <filact_accountshield>
+                    <files>
+                        <default>filact_accountshield.csv</default>
+                    </files>
+                </filact_accountshield>
+            </modules>
+        </translate>
+	</frontend>
+</config>
