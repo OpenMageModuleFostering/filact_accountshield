@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/Filact_Accountshield",
+    "name": "openmage-module-fostering\/filact_accountshield",
     "type": "magento-module",
-    "license": "OSL",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Implements Account Lockout to enhance the User authentication security",
     "authors": [
