@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Filact_Accountshield",
+    "name": "OpenMageModuleFostering\/Filact_Accountshield",
     "type": "magento-module",
     "license": "OSL",
     "homepage": "",
     "description": "Implements Account Lockout to enhance the User authentication security",
     "authors": [
-    {
-        "name": "Karuppusamy Ganesan",
-        "email": "admin@filact.com"
-    }
-],
+        {
+            "name": "Karuppusamy Ganesan",
+            "email": "admin@filact.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
